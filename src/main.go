@@ -9,7 +9,7 @@ import (
 
 func home(w http.ResponseWriter, r *http.Request) {
 
-	log.Printf("Connected from %s", r.RemoteAddr)
+	log.Printf("Connected from %s\n", r.RemoteAddr)
 
 	w.Header().Set("Content-type", "text/event-stream")
 
@@ -24,6 +24,8 @@ func home(w http.ResponseWriter, r *http.Request) {
 		time.Sleep(1 * time.Second)
 	}
 }
+
+func savesession() {}
 
 func main() {
 	fmt.Printf("Running a server...\n")
